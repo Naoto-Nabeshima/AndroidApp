@@ -1,0 +1,31 @@
+[【Detail】]
+Shop Name
+Map
+Address
+Near Station
+Memo
+--
+Search
+==>【Search Result】
+Regist
+==>【List】
+Back
+==>【List】
+
+[【List】]
+Shop Name
+--
+Search
+==>【Search Result】
+Select Shop
+==>【Detail】
+
+[【Search Result】]
+Shop Name
+--
+Select Shop
+==>【Detail】
+Search
+==>【Search Result】
+Back
+==>【List】
