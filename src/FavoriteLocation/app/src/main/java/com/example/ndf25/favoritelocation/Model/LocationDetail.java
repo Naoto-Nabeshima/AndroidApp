@@ -5,40 +5,47 @@ package com.example.ndf25.favoritelocation.Model;
  */
 
 public class LocationDetail {
-    String mLocationName;
-    String mAddress;
-    String mStation;
-    String mMemo;
+    private String mLocationName;
+    private String mAddress;
+    private String mStation;
+    private String mMemo;
 
-    public void SetLocationName(String locationName){
+    public LocationDetail(){
+//        mLocationName = locationName;
+//        mAddress = address;
+//        mStation = station;
+//        mMemo = memo;
+    }
+
+    public void setLocationName(String locationName){
         mLocationName = locationName;
     }
 
-    public void SetAddress(String address){
+    public void setAddress(String address){
         mAddress = address;
     }
 
-    public void SetStation(String station){
+    public void setStation(String station){
         mStation = station;
     }
 
-    public  void SetMemo(String memo){
+    public  void setMemo(String memo){
         mMemo = memo;
     }
 
-    public String GetLocationName(){
+    public String getLocationName(){
         return mLocationName;
     }
 
-    public  String GetAddress(){
+    public  String getAddress(){
         return mAddress;
     }
 
-    public  String GetStation(){
+    public  String getStation(){
         return  mStation;
     }
 
-    public String GetMemo(){
+    public String getMemo(){
         return mStation;
     }
 }
