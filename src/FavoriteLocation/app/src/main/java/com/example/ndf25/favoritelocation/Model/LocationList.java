@@ -1,8 +1,6 @@
 package com.example.ndf25.favoritelocation.Model;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
 
 /**
  * Created by ndf25 on 2016/11/29.
@@ -11,20 +9,20 @@ import java.util.LinkedList;
 public class LocationList {
 
     // メンバ変数の宣言（Singleton)
-    private static int mSelectedItemIndex;
-    private static LocationList mLocationList = new LocationList();;
+    private static LocationList mLocationListInstance = new LocationList();;
     private static ArrayList<LocationDetail> mLocationArrayList = new ArrayList<LocationDetail>();
 
     // コンストラクタ
     private LocationList(){
     }
 
+    // インスタンスの取得
     public static LocationList getInstance(){
-        if (mLocationList == null){
-            mLocationList = new LocationList();
+        if (mLocationListInstance == null){
+            mLocationListInstance = new LocationList();
             mLocationArrayList = new ArrayList<LocationDetail>();
         }
-        return mLocationList;
+        return mLocationListInstance;
     }
 
     public void addLocationList(LocationDetail data) {
@@ -41,17 +39,6 @@ public class LocationList {
 
     public int getListSize(){
         return mLocationArrayList.size();
-    }
-
-    public void setSelectedItemIndex(int selectedIndex){
-        if ((0 > selectedIndex) || (selectedIndex > mLocationList.getListSize())) {
-            mSelectedItemIndex = -1;
-        }
-        mSelectedItemIndex = selectedIndex;
-    }
-
-    public int getSelectedItemIndex(){
-        return mSelectedItemIndex;
     }
 
     public void setLocationName(String locationName, int index){

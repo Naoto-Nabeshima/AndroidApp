@@ -13,13 +13,6 @@ public class LocationForm {
     public LocationForm(){
         mLocationList = LocationList.getInstance();
     }
-    public  void setSelectedIndex(int selectedIndex){
-        mLocationList.setSelectedItemIndex(selectedIndex);
-    }
-
-    public  int getmSelectedIndex() {
-        return mLocationList.getSelectedItemIndex();
-    }
 
     public void setLocationName(String locationName, int index){
         mLocationList.setLocationName(locationName, index);

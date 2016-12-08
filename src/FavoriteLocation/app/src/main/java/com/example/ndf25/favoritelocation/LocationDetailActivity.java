@@ -20,7 +20,8 @@ public class LocationDetailActivity extends AppCompatActivity {
     private EditText mLocationAddressEditText;
     private EditText mLocationMemoEditText;
     private LocationForm mLocationForm;
-    private LocationList mLocationList;
+    private static LocationList mLocationList;
+    private static int mIndex = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +48,16 @@ public class LocationDetailActivity extends AppCompatActivity {
         mRegistButton.setOnClickListener(mRegistButtonClickListener);
 
         // EditTextにデータを設定
-        LocationDetail selectedItem = mLocationList.getLocationList(mLocationForm.getmSelectedIndex());
+        LocationDetail selectedItem = mLocationList.getLocationList(mIndex);
         mLocationNameEditText.setText(selectedItem.getLocationName(), TextView.BufferType.NORMAL);
         mLocationAddressEditText.setText(selectedItem.getAddress(), TextView.BufferType.NORMAL);
-
     }
 
+    public static int getIndex(){
+        return mIndex;
+    }
+
+    public static void setIndex(int index){
+        mIndex = index;
+    }
 }
