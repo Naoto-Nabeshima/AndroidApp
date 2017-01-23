@@ -1,5 +1,9 @@
 package com.example.ndf25.favoritelocation.Control;
 
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationManager;
+
 import com.example.ndf25.favoritelocation.Model.LocationList;
 
 /**
@@ -45,4 +49,6 @@ public class LocationForm {
     public String getMemo(int index){
         return mLocationList.getMemo(index);
     }
+
+
 }

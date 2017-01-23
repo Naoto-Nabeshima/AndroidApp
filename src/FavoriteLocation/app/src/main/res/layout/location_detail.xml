@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,20 +17,21 @@
         android:layout_marginBottom="20dp"
         >
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="locationname"
             android:id="@+id/location_name"
             android:textSize="50sp"
             android:layout_marginBottom="30dp"/>
-        <ImageView
+        <com.google.android.maps.MapView
+            android:id="@+id/maps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:minHeight="150sp"
             android:minWidth="150sp"
-            android:src="@drawable/lupe"
-            android:layout_marginBottom="30dp" />
+            android:layout_marginBottom="30dp"
+            android:apiKey="@string/google_maps_key"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,4 +69,5 @@
             android:layout_gravity="right|bottom"
             android:id="@+id/location_regist"/>
     </LinearLayout>
+    </ScrollView>
 </LinearLayout>

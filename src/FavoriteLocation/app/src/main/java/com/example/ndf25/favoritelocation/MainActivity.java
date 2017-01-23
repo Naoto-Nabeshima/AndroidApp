@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerListView;
     private static DrawerItemList mDrawerMenuItem;
+    private LocationList locationListModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         setNavigationDrawer();
 
         // ListViewにデータを設定
-        LocationList locationListModel = LocationList.getInstance();
+        locationListModel = LocationList.getInstance();
 
         LocationDetail temp = new LocationDetail();
         LocationDetail temp2 = new LocationDetail();
@@ -84,8 +85,7 @@ public class MainActivity extends AppCompatActivity {
         locationListModel.addLocationList(temp2);
         locationListModel.addLocationList(temp3);
 
-        CustomAdapter mListAdapter = new CustomAdapter(this, R.layout.support_simple_spinner_dropdown_item, locationListModel.getAllLocationList());
-        mMainContentListView.setAdapter(mListAdapter);
+
 
         String[] mDrawerMenu = new String[mDrawerMenuItem.getDrawerMenuListSize()];
         for (int i = 0; i < mDrawerMenuItem.getDrawerMenuListSize(); i++) {
@@ -99,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
+        CustomAdapter mListAdapter = new CustomAdapter(this, R.layout.support_simple_spinner_dropdown_item, locationListModel.getAllLocationList());
+        mMainContentListView.setAdapter(mListAdapter);
     }
 
     @Override
@@ -106,11 +108,30 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
     }
 
+    @Override
+    public void onRestart(){
+        super.onRestart();
+    }
+
     private void setNavigationDrawer(){
         AdapterView.OnItemClickListener drawerListener = new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                // ドロワーアイテムが選択された時の処理
+                switch (i){
+                    case 0:
+                        // 詳細画面に遷移
+                        LocationDetailActivity.misNewItem = true;
+                        Intent intent = new Intent();
+                        intent = intent.setClass(MainActivity.this, LocationDetailActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        break;
+                }
+
             }
         };
 

@@ -11,10 +11,10 @@ public class LocationDetail {
     private String mMemo;
 
     public LocationDetail(){
-//        mLocationName = locationName;
-//        mAddress = address;
-//        mStation = station;
-//        mMemo = memo;
+        mLocationName = "";
+        mAddress = "";
+        mStation = "";
+        mMemo = "";
     }
 
     public void setLocationName(String locationName){
