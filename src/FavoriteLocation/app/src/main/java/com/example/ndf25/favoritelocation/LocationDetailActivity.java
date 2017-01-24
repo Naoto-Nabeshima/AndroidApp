@@ -15,9 +15,11 @@ import android.widget.TextView;
 import com.example.ndf25.favoritelocation.Control.LocationForm;
 import com.example.ndf25.favoritelocation.Model.LocationDetail;
 import com.example.ndf25.favoritelocation.Model.LocationList;
-//import com.google.android.maps.MapActivity;
-import com.google.android.gms.maps.GoogleMap;
 
+import java.util.Map;
+
+//import com.google.android.gms.maps.GoogleMap;
+//import com.google.android.gms.maps.MapFragment;
 
 public class LocationDetailActivity extends AppCompatActivity {
 
@@ -91,6 +93,8 @@ public class LocationDetailActivity extends AppCompatActivity {
                double temp = mCurrentLocate.getLatitude();
             }
         }
+
+        //Map
     }
 
     public static int getIndex(){

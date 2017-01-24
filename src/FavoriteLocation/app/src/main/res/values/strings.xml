@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">FavoriteLocation</string>
-    <string name="google_maps_key">AIzaSyCv8zaMEzU6N0_z9r0YDmvQmfwIMLb3Aak</string>
+    <string name="google_maps_key">AIzaSyB0ioxEBv3OWg9vM3ITQpf8aarA65fNi_0</string>
+    <integer name="google_play_services_version">8</integer>
 </resources>

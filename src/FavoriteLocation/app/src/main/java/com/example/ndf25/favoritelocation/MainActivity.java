@@ -1,7 +1,9 @@
 package com.example.ndf25.favoritelocation;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,10 +13,21 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.ndf25.favoritelocation.Control.LocationForm;
+import com.example.ndf25.favoritelocation.Control.MySQLiteHelper;
+import com.example.ndf25.favoritelocation.Control.MySQLiteOpenHelper;
 import com.example.ndf25.favoritelocation.Model.DrawerItemList;
 import com.example.ndf25.favoritelocation.Model.LocationDetail;
 import com.example.ndf25.favoritelocation.Model.LocationList;
 import com.example.ndf25.favoritelocation.View.CustomAdapter;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+//import com.google.android.gms.maps.GoogleMap;
+//import com.google.android.gms.maps.MapFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +45,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // メンバ変数にコントロールを設定
+//        MapFragment mf;
+
+        MySQLiteOpenHelper dbHelper = new MySQLiteOpenHelper(getApplicationContext());
+        dbHelper.getWritableDatabase();
+
+        // メンバ変数にコントロールを設z
         // コンテンツ部分
         mMainContentListView = (ListView) findViewById(R.id.all_list_view);
         mImageView = new ImageView(this);
@@ -84,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
         locationListModel.addLocationList(temp);
         locationListModel.addLocationList(temp2);
         locationListModel.addLocationList(temp3);
-
-
 
         String[] mDrawerMenu = new String[mDrawerMenuItem.getDrawerMenuListSize()];
         for (int i = 0; i < mDrawerMenuItem.getDrawerMenuListSize(); i++) {
