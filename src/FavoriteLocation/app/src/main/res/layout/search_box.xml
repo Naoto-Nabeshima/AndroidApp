@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:width="120pt"
             android:textColor="@color/colorWhite"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
         <ImageView android:layout_height="20pt"
             android:layout_width="30pt"
             android:src="@drawable/lupe"/>

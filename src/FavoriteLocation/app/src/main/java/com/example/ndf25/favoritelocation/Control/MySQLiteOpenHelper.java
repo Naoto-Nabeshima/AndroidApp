@@ -50,6 +50,8 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper{
         BufferedReader mBufferedReader = null;
 
         try {
+
+
             // 文字コード(UTF-8)を指定して、ファイルを読み込み
             mInputStream = m_context.getAssets().open(fileName);
             mInputStreamReader = new InputStreamReader(mInputStream, "UTF-8");
